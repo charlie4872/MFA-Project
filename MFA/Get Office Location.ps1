@@ -1,1 +1,0 @@
-$list = Get-content -Path '.\users.txt' |ForEach-Object {Get-AdUser -LDAPFilter "(userprincipalname=$_)" -Properties DisplayName, Office, DistinguishedName, UserPrincipalName } | Select DisplayName, Office, DistinguishedName, UserPrincipalName | Export-csv ".\Users_Location.csv" -nt

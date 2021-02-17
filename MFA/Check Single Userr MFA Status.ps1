@@ -1,2 +1,0 @@
-$username = Read-Host -Prompt 'Enter Username'
-Get-MsolUser -UserPrincipalName $username | select DisplayName,UserPrincipalName,@{N="MFA Status"; E={ if( $_.StrongAuthenticationRequirements.State -ne $null){ $_.StrongAuthenticationRequirements.State} else { "Disabled"}}}
